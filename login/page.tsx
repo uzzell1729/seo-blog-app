@@ -3,7 +3,9 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase';
+import { supabase } from '../../lib/supabase';  // Full relative from app/login/page.tsx
+
+
 
 export default function Login() {
   const [email, setEmail] = useState('');
