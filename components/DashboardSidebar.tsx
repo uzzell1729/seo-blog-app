@@ -2,8 +2,7 @@
 'use client';
 
 import { useRouter } from 'next/navigation';
-import { supabase } from '../lib/supabase';
-import Link from 'next/link';
+import { supabase } from '../lib/supabase';  // Full relative from components
 
 export default function DashboardSidebar({ user }: { user: any }) {
   const router = useRouter();
