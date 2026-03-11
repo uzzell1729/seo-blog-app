@@ -1,11 +1,9 @@
-// app/login/page.tsx
+// app/login/page.tsx - Login/Signup
 'use client';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '../../lib/supabase';  // Full relative from app/login/page.tsx
-
-
+import { supabase } from '../../../lib/supabase';
 
 export default function Login() {
   const [email, setEmail] = useState('');
@@ -37,22 +35,8 @@ export default function Login() {
       <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
         <h1 className="text-2xl font-bold mb-6">{isSignup ? 'Sign Up' : 'Log In'}</h1>
         <form onSubmit={handleAuth}>
-          <input
-            type="email"
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="w-full p-3 mb-4 border rounded"
-            required
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full p-3 mb-4 border rounded"
-            required
-          />
+          <input type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} className="w-full p-3 mb-4 border rounded" required />
+          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} className="w-full p-3 mb-4 border rounded" required />
           {error && <p className="text-red-500 mb-4">{error}</p>}
           <button type="submit" className="w-full bg-blue-500 text-white p-3 rounded mb-4">
             {isSignup ? 'Sign Up' : 'Log In'}
