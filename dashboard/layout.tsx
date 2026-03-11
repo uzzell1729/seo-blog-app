@@ -1,7 +1,7 @@
 // app/dashboard/layout.tsx
 import { redirect } from 'next/navigation';
-import { supabase } from '@/lib/supabase';
-import DashboardSidebar from '@/components/DashboardSidebar';
+import { supabase } from '../../../lib/supabase';  // Full relative from app/dashboard/layout.tsx
+import DashboardSidebar from '../../../components/DashboardSidebar';  // Full relative
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { data: { user } } = await supabase.auth.getUser();
