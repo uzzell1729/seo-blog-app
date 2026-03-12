@@ -3,11 +3,11 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { supabase } from '../../lib/supabase';  // From app/login to root/lib
+import { supabase } from '../../lib/supabase';
 
 export default function Login() {
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [password, setPassword ] = useState('');
   const [error, setError] = useState('');
   const [isSignup, setIsSignup] = useState(false);
   const router = useRouter();
