@@ -1,7 +1,7 @@
 // app/dashboard/layout.tsx - Protected layout
 import { redirect } from 'next/navigation';
-import { supabase } from '../../lib/supabase';  // From app/dashboard to root/lib
-import DashboardSidebar from '../../components/DashboardSidebar';  // From app/dashboard to root/components
+import { supabase } from '../../lib/supabase';
+import DashboardSidebar from '../../components/DashboardSidebar';
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { data: { user } } = await supabase.auth.getUser();
